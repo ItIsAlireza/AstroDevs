@@ -1,0 +1,459 @@
+@font-face {
+  font-family: play-bold;
+  src: url(../fonts/Play-Bold.ttf);
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: play-reg;
+  src: url(../fonts/Play-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  background-size: auto;
+  background-repeat: no-repeat;
+  max-height: 1vh;
+  background-image: url("../image/background_small.png");
+  font-family: play-bold;
+  color: white;
+}
+
+.logoholder {
+  margin: 20px 16px;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  font-size: 120%;
+}
+
+.logoholder:hover img {
+  animation: spin 1s;
+}
+
+.logoholder img {
+  width: 80px;
+  display: inline-block;
+  -ms-transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  image-rendering: -moz-crisp-edges; /* Firefox */
+  image-rendering: -o-crisp-edges; /* Opera */
+  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+
+.logoholder h2 {
+  margin-left: 0.3em;
+  position: relative;
+  top: -5px;
+}
+
+.maintxt_holder {
+  display: flex;
+  flex-direction: column;
+}
+
+.maintxt_holder h1 {
+  font-size: 500%;
+}
+.maintxt_holder h2 {
+  font-size: 300%;
+  margin-top: 30px;
+}
+
+.mainbtn_place {
+  display: flex;
+  margin-top: 80px;
+}
+
+.mainbtn_place .start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 120%;
+  border: 2px solid white;
+  border-radius: 5em;
+  width: 200px;
+}
+
+.mainbtn_place .start a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: white;
+}
+.mainbtn_place .mainimg img {
+  width: 4em;
+}
+
+.mainbtn_place .mainimg {
+  flex-wrap: nowrap;
+  max-width: 100px;
+  transition: max-width 0.5s;
+  max-height: 80px;
+  overflow: hidden;
+}
+
+.mainbtn_place .mainimg {
+  margin-left: 30px;
+  border: 2px solid white;
+  border-radius: 70%;
+  padding: 16px;
+}
+
+.mainbtn_place .start::before {
+  content: url("../image/icons/spaceship.png");
+  transform: translate(-10px, 25px);
+  opacity: 0;
+  opacity: 0;
+  left: -50px;
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.start:hover::before {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+@keyframes move {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  10% {
+    transform: translate(10px, 10px);
+  }
+  20% {
+    transform: translate(30px, -20px);
+  }
+  30% {
+    transform: translate(45px, -10px);
+  }
+  40% {
+    transform: translate(20px, -20px);
+  }
+  50% {
+    transform: translate(25px, -15px);
+  }
+  75% {
+    transform: translate(20px, 20px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+main .satellite {
+  display: none;
+}
+
+main .circle_bac {
+  transition: border-radius 0.5s;
+  line-height: 180%;
+  padding: 16px 16px 16px 50px;
+  font-size: 280%;
+}
+main .circle_bac:hover {
+  border-radius: 2em 0 2em 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .maincontainer {
+    font-size: 50%;
+    margin-left: 20px;
+    margin-top: 70px;
+  }
+  main {
+    margin: 0 20px;
+    display: flex;
+    color: black;
+    flex-direction: column;
+    font-family: play-reg;
+  }
+  .leftcont .circle_bac {
+    max-width: 100%;
+    background: white;
+    margin: 16px;
+    padding: 3em 1.5em;
+    border-radius: 2em;
+    font-size: 160%;
+  }
+
+  .rightcont .circle_bac {
+    max-width: 100%;
+    background: white;
+    margin: 16px;
+    padding: 3em 1.5em;
+    border-radius: 2em;
+    font-size: 160%;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .maincontainer {
+    font-size: 60%;
+    margin-left: 20px;
+    margin-top: 70px;
+  }
+
+  main {
+    margin: 0 20px;
+    display: flex;
+    color: black;
+    flex-direction: column;
+    font-family: play-reg;
+  }
+
+  .leftcont .circle_bac {
+    max-width: 50%;
+    background: white;
+    margin: 8px;
+    padding: 3em 1.5em;
+    border-radius: 2em;
+    font-size: 160%;
+    margin-right: auto;
+  }
+
+  .rightcont .circle_bac {
+    max-width: 50%;
+    background: white;
+    margin: 8px;
+    padding: 3em 1.5em;
+    border-radius: 2em;
+    font-size: 160%;
+    margin-left: auto;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .logoholder {
+    margin:16px;
+  }
+  .maincontainer {
+    margin-top: 100px;
+    font-size: 80%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .logoholder{
+    margin: 16px;
+  }
+  .leftcont .circle_bac {
+    max-width: 50%;
+    background: white;
+    margin: 8px;
+    padding: 3em 1.5em;
+    border-radius: 2em;
+    font-size: 160%;
+    margin-right: auto;
+  }
+
+  .rightcont .circle_bac {
+    max-width: 50%;
+    background: white;
+    margin: 8px;
+    padding: 3em 1.5em;
+    border-radius: 2em;
+    font-size: 160%;
+    margin-left: auto;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../image/background.png");
+    font-family: play-bold;
+    color: white;
+  }
+  .astronaut_cont{
+    position: absolute;
+    width:600px;
+    height: 1000px;
+    top: 25%;
+    right: 0;
+    overflow: hidden;
+  }
+  .astronaut {
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+    background-image: url("../image/icons/astronaut_2-test.png");
+    animation: move 30s infinite linear;
+  }
+
+  .logoholder {
+    margin: 16px;
+  }
+  .maincontainer {
+    margin-left: 50px;
+    margin-top: 200px;
+  }
+  main {
+    position: relative;
+    display: flex;
+    height: 800px;
+    font-family: play-reg;
+    margin: 0 80px;
+    flex-wrap: wrap;
+  }
+
+  main .satellite {
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 70%;
+    bottom: 10%;
+    animation: move 20s linear infinite;
+    display: inline-block;
+  }
+
+  main .satellite img {
+    width: 300px;
+    display: inline-block;
+  }
+
+  .leftcont {
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+
+  .rightcont {
+    margin-left: auto;
+    margin-top: 20px;
+  }
+
+  .leftcont .circle_bac {
+    max-width: 100%;
+    background: white;
+    margin: 8px;
+    padding: 3em 1.5em;
+    border-radius: 2em;
+    font-size: 180%;
+    margin-right: auto;
+  }
+
+  .rightcont .circle_bac {
+    max-width: 100%;
+    background: white;
+    margin: 8px;
+    padding: 3em 1.5em;
+    border-radius: 2em;
+    font-size: 180%;
+    margin-left: auto;
+  }
+
+  main p {
+    color: #000000;
+    text-shadow: 2px 2px 5px white;
+    filter: blur(0);
+  }
+}
+
+@media all and (min-width: 1700px) {
+  body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-height: 1vh;
+    background-image: url("../image/background.png");
+    font-family: play-bold;
+    color: white;
+  }
+
+  .astronaut_cont{
+    position: absolute;
+    width:800px;
+    height: 1000px;
+    right: 0;
+    overflow: hidden;
+  }
+  .astronaut {
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+    background-image: url("../image/icons/astronaut_2-test.png");
+    animation: move 30s infinite linear;
+  }
+
+  main {
+    position: relative;
+    display: flex;
+    height: 800px;
+    font-family: play-reg;
+    margin: 0 80px;
+    flex-wrap: wrap;
+  }
+
+  main .satellite {
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 70%;
+    bottom: -10%;
+    animation: move 20s linear infinite;
+    display: inline-block;
+  }
+
+  main .satellite img {
+    width: 400px;
+    display: inline-block;
+  }
+
+  .leftcont {
+    margin-right: auto;
+    margin-bottom: auto;
+  }
+  .leftcont .circle_bac {
+    position: absolute;
+    left: 50px;
+    top: 60px;
+    background: #f4f4f4;
+    border-radius: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .rightcont {
+    margin-left: auto;
+    margin-top: auto;
+  }
+
+  .rightcont .circle_bac {
+    position: absolute;
+    right: 50px;
+    bottom: 10px;
+  }
+  .astronaut_main{
+    background-image: url("../image/icons/astronaut.png");
+    background-size: cover;
+    width: 250px;
+    height: 250px;
+    z-index: -1;
+    position: absolute;
+    right: 50%;
+    top: -80%;
+  }
+
+  main p {
+    color: #000000;
+    text-shadow: 2px 2px 5px white;
+  }
+}
